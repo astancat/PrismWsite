@@ -15,13 +15,16 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 const downloadButtons = document.querySelectorAll(".download-btn");
 
 downloadButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const originalText = button.innerHTML;
+    button.addEventListener("click", function () {
+        const originalText = this.innerHTML;
 
-        button.innerHTML = "Starting download...";
+        this.innerHTML = "Starting download...";
 
         setTimeout(() => {
-            button.innerHTML = originalText;
-        }, 1800);
+            window.location.href =
+                "https://github.com/astancat/pgmappfiles/raw/main/Prism_8.5_major.apk";
+
+            this.innerHTML = originalText;
+        }, 300);
     });
 });
